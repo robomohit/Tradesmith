@@ -1,0 +1,8 @@
+This repository contains a built artifact only.
+
+The source is not published and is not licensed for redistribution.
+You may run this script. Reuploading it, repackaging it, or selling it
+is not permitted.
+
+No warranty. Automating a Roblox game can get the account banned; that
+risk is entirely the user's.
