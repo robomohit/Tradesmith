@@ -15,9 +15,12 @@ is meant to be left running.
 
 **It starts in practice mode** — it works every trade out and sends
 nothing. Watch it turn a few offers down first. When you are ready, open
-**Rules** in the in-game panel and switch practice mode off. That choice
-is saved to `bf-trader-settings.json` in your executor's workspace and
-survives a rejoin.
+**Settings** in the in-game panel and switch practice mode off. That
+choice is saved to `bf-trader-settings.json` in your executor's
+workspace and survives a rejoin.
+
+Press **Right Shift** to hide or show the panel. It keeps trading while
+it is hidden.
 
 ## What it will not do
 
@@ -31,20 +34,31 @@ survives a rejoin.
 - Re-reads the trade window immediately before accepting, so a side that
   changed after the offer was judged cancels the trade.
 
-## Settings
+## The panel
 
-All in the in-game panel under **Rules**: practice mode, minimum gain,
-minimum demand, items per side. Reserve prices per item are there too.
-Nothing needs editing by hand.
+Five pages:
+
+- **Home** — is it on, what is it doing, and will real items leave.
+- **Activity** — the trades it made, and why it turned offers down.
+- **Items** — what you own, and what it can never trade away. Lock
+  anything here and it never goes on the table.
+- **Market** — what is worth trading for, and what to stay away from.
+- **Settings** — practice mode, minimum gain, minimum demand, items per
+  side, and the phone dashboard.
+
+Settings are saved as you change them and survive a rejoin. The
+never-accept list and any minimum prices are shown on **Items** but are
+not editable from the panel — they are what makes this safe to leave
+running.
 
 If you multi-launch, add `"owner": "YourRobloxName"` to
 `bf-trader-settings.json` so it only runs on the account you meant.
 
 ## Watch it from your phone (optional, off by default)
 
-The panel can sync to **https://tradesmith.pages.dev**. Turn **Sync** on
-under **Rules**, press **Copy key**, and paste that key on the site to
-see the same numbers from anywhere.
+The panel can sync to **https://tradesmith.pages.dev**. Turn on **Send
+updates to my phone** under **Settings**, press **Copy key**, and paste
+that key on the site to see the same numbers from anywhere.
 
 It sends what you hold and its book value, what the engine is doing, the
 session counters, your rules and reserve prices, completed trades, the
