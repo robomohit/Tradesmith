@@ -40,6 +40,35 @@ Nothing needs editing by hand.
 If you multi-launch, add `"owner": "YourRobloxName"` to
 `bf-trader-settings.json` so it only runs on the account you meant.
 
+## Watch it from your phone (optional, off by default)
+
+The panel can sync to **https://tradesmith.pages.dev**. Turn **Sync** on
+under **Rules**, press **Copy key**, and paste that key on the site to
+see the same numbers from anywhere.
+
+It sends what you hold and its book value, what the engine is doing, the
+session counters, your rules and reserve prices, completed trades, the
+top of the value list, and the recent event log. It does not send your
+Roblox name, anyone you trade with, or anything from chat - partner
+names in the event log are replaced before it is sent.
+
+The key is the only credential; anyone holding it sees your dashboard.
+It is saved as `tradesmith-key.txt` in your executor's workspace.
+Delete that file and the next sync mints a fresh key - but the old one
+keeps working for whoever has it, because nothing revokes it server
+side. Treat it like a password.
+
+## What it loads
+
+The interface comes from one of four community UI libraries, fetched at
+runtime from GitHub and pinned to fixed versions. They are not mine and
+they run in your executor:
+
+- Airflow-UI (PookiePepelsss)
+- Starlight Interface Suite (Nebula-Softworks)
+- Maclib (biggaboy212)
+- WindUI (Footagesus)
+
 ## Honest notes
 
 Automating a Roblox game is against Roblox's rules and Blox Fruits'.
