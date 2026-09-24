@@ -19,23 +19,28 @@ Open **Settings** in the in-game panel and switch it on when you want it
 to trade. That choice is saved to `bf-trader-settings.json` in your
 executor's workspace and survives a rejoin.
 
-Press **Right Shift** to hide or show the panel. It keeps trading while
-it is hidden.
+**Hide or show the panel:** press **Ctrl** (**Cmd** on a Mac). On a phone
+or tablet, tap the round **TS** button — drag it anywhere on screen. It
+keeps trading while the panel is hidden.
 
 ## What it will not do
 
-- Never gives away a gamepass, a permanent, a dragon, or anything in
-  your reserve list.
-- **Judges every offer against the size of your own inventory.** The
-  quality rules used to be fixed amounts, chosen for a large book, so a
-  smaller one tripped none of them and was left with the gain ratio and
-  nothing else. Now a package that is most of what you own has to clear a
-  higher bar than a routine one; slow-moving items stop counting at full
-  book price; and it will not break up your best item for a handful of
-  smaller ones when that item is most of what you have. The same rules
-  apply whether you are trading 50M or 5B.
-- Refuses skins and fruits that can still come out of a gacha box. Those
-  slide in value and a stranger handing you one is handing you the fall.
+- **Never gives away a dragon, a gamepass or a permanent fruit.** This is
+  built into the script, not a setting, so it holds even if you have
+  locked nothing.
+- **Never takes a dragon, a gamepass or a permanent fruit in.** Dragons
+  and fruits that can still come out of a gacha box are on the
+  never-accept list, which you can switch off in Settings (it is
+  recommended to leave it on) — those slide in value, and a stranger
+  handing you one is handing you the fall.
+- Never accepts an item it cannot price. Unknown item, no deal.
+- Never trades anything you lock on the **Items** page.
+- **Judges every offer against the size of your own inventory.** A package
+  that is most of what you own has to clear a higher bar than a routine
+  one; slow-moving items stop counting at full price; and it will not
+  break up your best item for a handful of smaller ones when that item is
+  most of what you have. The same rules apply whether you are trading 50M
+  or 5B.
 - Checks the game's own trade rule before offering. Limited items carry
   no Beli at all, so a trade that looks fair by value can be illegal by
   the game's maths.
@@ -44,52 +49,54 @@ it is hidden.
 
 ## The panel
 
-Five pages:
+Six pages:
 
 - **Home** — is it on, what is it doing, and will real items leave.
 - **Activity** — the trades it made, and why it turned offers down.
-- **Items** — what you own, and what it can never trade away. Lock
-  anything here and it never goes on the table.
+- **Items** — what you own, and what it can never trade away.
 - **Market** — what is worth trading for, and what to stay away from.
-- **Settings** — send real trades, minimum gain, minimum demand, items
-  per side, and the phone dashboard.
+- **Dashboard** — the optional live page you can open on any device.
+- **Settings** — send real trades, minimum gain, minimum demand, items per
+  side, walk speed and server hopping (off by default).
 
-Settings are saved as you change them and survive a rejoin. The
-never-accept list and any minimum prices are shown on **Items** but are
-not editable from the panel — they are what makes this safe to leave
-running.
+Settings are saved as you change them and survive a rejoin.
 
 If you multi-launch, add `"owner": "YourRobloxName"` to
 `bf-trader-settings.json` so it only runs on the account you meant.
 
-## Watch it from your phone (optional, off by default)
+## What it sends
 
-The panel can sync to **https://tradesmith.pages.dev**. Turn on **Send
-updates to my phone** under **Settings**, press **Copy key**, and paste
-that key on the site to see the same numbers from anywhere.
+Plainly, all of it:
 
-It sends what you hold and its book value, what the engine is doing, the
-session counters, your rules and reserve prices, completed trades, the
-top of the value list, and the recent event log. It does not send your
-Roblox name, anyone you trade with, or anything from chat - partner
-names in the event log are replaced before it is sent.
+- **Download count.** The line above fetches the script through
+  `tradesmith.pages.dev`, which records that a download happened: the
+  time and a country. Nothing about you. If that site is down it falls
+  back to the copy in this repository and still runs.
+- **Crash reports.** If something breaks, it sends one short line: which
+  part failed, the error message, your executor's name, the game, your
+  screen size and the build. At most five a session. Never your username,
+  your user id, your items or your key — your own name is removed from
+  the error text before it is sent.
+- **The dashboard — off by default.** Turn on **Send updates to my
+  dashboard** on the **Dashboard** page and it sends what you hold and its
+  value, what the engine is doing, session counters, your rules and
+  minimum prices, completed trades and the recent event log, to your own
+  page at https://tradesmith.pages.dev. Partner names in the event log are
+  replaced before it is sent. If you also turn on **Show my name and
+  avatar**, it sends your numeric Roblox user id so the page can show
+  them; your name itself is never sent or stored.
 
-The key is the only credential; anyone holding it sees your dashboard.
-It is saved as `tradesmith-key.txt` in your executor's workspace.
-Delete that file and the next sync mints a fresh key - but the old one
-keeps working for whoever has it, because nothing revokes it server
-side. Treat it like a password.
+The dashboard key is its only credential; anyone holding it sees your
+dashboard. It is saved as `tradesmith-key.txt` in your executor's
+workspace. Treat it like a password.
 
 ## What it loads
 
-The interface comes from one of four community UI libraries, fetched at
-runtime from GitHub and pinned to fixed versions. They are not mine and
-they run in your executor:
-
-- Airflow-UI (PookiePepelsss)
-- Starlight Interface Suite (Nebula-Softworks)
-- Maclib (biggaboy212)
-- WindUI (Footagesus)
+The interface comes from a community UI library fetched from GitHub at
+runtime, pinned to a fixed version — Airflow-UI (PookiePepelsss), with
+WindUI (Footagesus), Maclib (biggaboy212) and Starlight Interface Suite
+(Nebula-Softworks) as fallbacks. They are not mine and they run in your
+executor.
 
 ## Honest notes
 
@@ -101,9 +108,13 @@ The value list is scraped from community value sites and is only as good
 as they are. A trade it calls a 1.2x win is a 1.2x win *according to
 that list*.
 
-It makes small money slowly. Most of what it does is walk-up trades
-worth single-digit millions. It will not turn 100M into a billion
-overnight.
+It makes small money slowly. Most of what it does is walk-up trades. It
+will not turn 100M into a billion overnight.
+
+## Credits
+
+The published script is obfuscated with Prometheus.
+Based on Prometheus by Elias Oelschner, https://github.com/prometheus-lua/Prometheus
 
 ## Source
 
