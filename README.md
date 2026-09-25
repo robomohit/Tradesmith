@@ -13,11 +13,12 @@ Paste that into your executor. Put the same line in your autoexec folder
 and it loads on every join and after every server hop, which is how it
 is meant to be left running.
 
-**It starts with Send real trades off** — it works every offer out and
-shows you what it would have done, but nothing leaves your inventory.
-Open **Settings** in the in-game panel and switch it on when you want it
-to trade. That choice is saved to `bf-trader-settings.json` in your
-executor's workspace and survives a rejoin.
+**The first time you run it, it asks:** trade for real, or just watch
+first. Watching works every offer out and pops up each trade it would
+have taken, but nothing leaves your inventory. You can change it any time
+with **Send real trades** in **Settings**. The choice is saved to
+`bf-trader-settings.json` in your executor's workspace and survives a
+rejoin, so it only asks once.
 
 **Hide or show the panel:** press **Ctrl** (**Cmd** on a Mac). On a phone
 or tablet, tap the round **TS** button — drag it anywhere on screen. It
