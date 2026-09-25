@@ -70,8 +70,11 @@ Plainly, all of it:
 
 - **Download count.** The line above fetches the script through
   `tradesmith.pages.dev`, which records that a download happened: the
-  time and a country. Nothing about you. If that site is down it falls
-  back to the copy in this repository and still runs.
+  time, a country, and the device model your Roblox app reports with
+  every web request (for example an iPad or an Android phone model). This
+  is kept while the script is new, to see which devices it breaks on. It
+  never records your username, your user id or your IP. If that site is
+  down it falls back to the copy in this repository and still runs.
 - **Crash reports.** If something breaks, it sends one short line: which
   part failed, the error message, your executor's name, the game, your
   screen size and the build. At most five a session. Never your username,
