@@ -13,12 +13,25 @@ Paste that into your executor. Put the same line in your autoexec folder
 and it loads on every join and after every server hop, which is how it
 is meant to be left running.
 
-**The first time you run it, it asks:** trade for real, or just watch
-first. Watching works every offer out and pops up each trade it would
-have taken, but nothing leaves your inventory. You can change it any time
-with **Send real trades** in **Settings**. The choice is saved to
-`bf-trader-settings.json` in your executor's workspace and survives a
-rejoin, so it only asks once.
+**The first time you run it, it sets itself up.** Four questions, over
+the whole panel:
+
+1. **Your items.** It reads your inventory, tells you what it is all
+   worth, and asks about each one: **Keep** (never traded), **Trade**, or
+   **Get rid of** (it takes as little as 90% back to move it).
+2. **How careful.** Careful (at least 10% gain, popular items only),
+   Balanced (5%) or Busy (3%).
+3. **A fruit you are after,** if there is one. Pay a bit extra for it (as
+   little as 90% back), a fair trade (even or better), or only a bargain
+   like any other trade. Then: keep it once you have it, or let it trade.
+4. **Trade for real, or just watch first.** Watching works every offer out
+   and pops up each trade it would have taken, but nothing leaves your
+   inventory.
+
+Nothing is saved until the last answer. Change any of it later in
+**Settings**, or press **Run the setup again** there. Your answers are
+saved in your executor's workspace and survive a rejoin, so it only asks
+once.
 
 **Hide or show the panel:** press **Ctrl** (**Cmd** on a Mac). On a phone
 or tablet, tap the round **TS** button — drag it anywhere on screen. It
@@ -26,9 +39,15 @@ keeps trading while the panel is hidden.
 
 ## What it will not do
 
-- **Never gives away a gamepass or a permanent fruit.** This is built
-  into the script, not a setting, so it holds even if you have locked
-  nothing. Anything else you want to keep, lock on the **Items** page.
+- **Never gives away a gamepass or a permanent fruit you have not
+  released.** Every one starts on **Keep** in the setup; only the ones
+  you switch to Trade or Get rid of can leave. Anything else you want to
+  keep, mark Keep in the setup or lock it on the **Items** page.
+- **Only settles for less than a win when you said so:** a trade of
+  nothing but items you marked Get rid of (as little as 90% back), or a
+  trade for nothing but the fruit you are after (90% back on Pay a bit
+  extra, even value on Fair trade). Every other trade has to leave you
+  ahead.
 - **Never takes a gamepass or a permanent fruit in.** Fruits that can
   still come out of a gacha box are on the never-accept list, which you
   can switch off in Settings (it is recommended to leave it on) — those
@@ -53,11 +72,13 @@ Six pages:
 
 - **Home** — is it on, what is it doing, and will real items leave.
 - **Activity** — the trades it made, and why it turned offers down.
-- **Items** — what you own, and what it can never trade away.
+- **Items** — what you own, what it can never trade away, and what your
+  setup chose.
 - **Market** — what is worth trading for, and what to stay away from.
 - **Dashboard** — the optional live page you can open on any device.
 - **Settings** — send real trades, minimum gain, minimum demand, items per
-  side, walk speed and server hopping (off by default).
+  side, walk speed, server hopping (off by default) and running the setup
+  again.
 
 Settings are saved as you change them and survive a rejoin.
 
