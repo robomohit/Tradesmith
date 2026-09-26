@@ -26,14 +26,13 @@ keeps trading while the panel is hidden.
 
 ## What it will not do
 
-- **Never gives away a dragon, a gamepass or a permanent fruit.** This is
-  built into the script, not a setting, so it holds even if you have
-  locked nothing.
-- **Never takes a dragon, a gamepass or a permanent fruit in.** Dragons
-  and fruits that can still come out of a gacha box are on the
-  never-accept list, which you can switch off in Settings (it is
-  recommended to leave it on) — those slide in value, and a stranger
-  handing you one is handing you the fall.
+- **Never gives away a gamepass or a permanent fruit.** This is built
+  into the script, not a setting, so it holds even if you have locked
+  nothing. Anything else you want to keep, lock on the **Items** page.
+- **Never takes a gamepass or a permanent fruit in.** Fruits that can
+  still come out of a gacha box are on the never-accept list, which you
+  can switch off in Settings (it is recommended to leave it on) — those
+  slide in value, and a stranger handing you one is handing you the fall.
 - Never accepts an item it cannot price. Unknown item, no deal.
 - Never trades anything you lock on the **Items** page.
 - **Judges every offer against the size of your own inventory.** A package
