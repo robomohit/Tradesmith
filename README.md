@@ -26,7 +26,7 @@ the whole panel:
    like any other trade. Then: keep it once you have it, or let it trade.
 4. **Trade for real, or just watch first.** Watching works every offer out
    and pops up each trade it would have taken, but nothing leaves your
-   inventory.
+   inventory. Then turn on **Start trading** on Home.
 
 Nothing is saved until the last answer. Change any of it later in
 **Settings**, or press **Run the setup again** there. Your answers are
