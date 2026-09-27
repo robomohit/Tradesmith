@@ -102,17 +102,27 @@ Plainly, all of it:
   your user id, your items or your key — your own name is removed from
   the error text before it is sent.
 - **The dashboard — off by default.** Turn on **Send updates to my
-  dashboard** on the **Dashboard** page and it sends what you hold and its
-  value, what the engine is doing, session counters, your rules and
-  minimum prices, completed trades and the recent event log, to your own
-  page at https://tradesmith.pages.dev. Partner names in the event log are
-  replaced before it is sent. If you also turn on **Show my name and
-  avatar**, it sends your numeric Roblox user id so the page can show
-  them; your name itself is never sent or stored.
+  dashboard** on the **Dashboard** page and it sends, every half minute and
+  every few seconds while your dashboard is open (so the page is live), to
+  your own page at https://tradesmith.pages.dev: what you hold and what it
+  is worth, what it is doing and whether trading is on, what is on the
+  trade table (item names and values only), this session's counts and why
+  offers were turned down, your settings and setup choices (what you
+  keep, what you are getting rid of, your target fruit), your minimum
+  prices, the trades it finished, the top of the price list, the recent
+  activity, your item value over the session, the script's version, and
+  whether game staff are in your server. It never sends who you
+  trade with: names in the activity are replaced before it is sent, and
+  the trade table carries items, not players. If you also turn on **Show
+  my name and avatar**, it sends your numeric Roblox user id so the page
+  can show them; your name itself is never sent or stored. The site keeps
+  only the latest update, plus your total item value once every five
+  minutes for 7 days so the chart can show a day and a week; older
+  readings are deleted automatically.
 
 The dashboard key is its only credential; anyone holding it sees your
-dashboard. It is saved as `tradesmith-key.txt` in your executor's
-workspace. Treat it like a password.
+dashboard. It is saved as `tradesmith-key-<your user id>.txt` in your
+executor's workspace. Treat it like a password.
 
 ## What it loads
 
