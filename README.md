@@ -76,17 +76,19 @@ keeps trading while the panel is hidden.
 
 Six pages:
 
-- **Home** — is it on, what is it doing, and will real items leave. At
-  the bottom, **Join the Discord** copies the invite to the Tradesmith
-  server: help, updates and trade wins.
+- **Home** — is it on, what is it doing, what it made today and this
+  week, and will real items leave. At the bottom, **Join the Discord**
+  copies the invite to the Tradesmith server: help, updates and trade
+  wins.
 - **Activity** — the trades it made, and why it turned offers down.
 - **Items** — what you own, what it can never trade away, and what your
   setup chose.
 - **Market** — what is worth trading for, and what to stay away from.
-- **Dashboard** — the optional live page you can open on any device.
+- **Dashboard** — the optional live page you can open on any device,
+  and **Make a new key** if its link gets out.
 - **Settings** — send real trades, minimum gain, minimum demand, items per
-  side, walk speed, server hopping (off by default) and running the setup
-  again.
+  side, walk speed, server hopping (off by default), running the setup
+  again, and the usage counts switch under **Privacy**.
 
 Settings are saved as you change them and survive a rejoin.
 
@@ -113,30 +115,64 @@ Plainly, all of it:
   screen size and the build. At most five a session. Never your username,
   your user id, your items or your key — your own name is removed from
   the error text before it is sent.
+- **Usage counts** (no name, key, items or user id), so bugs get fixed:
+  trades done (or would have done, in watch mode), value change, mode,
+  minutes running and trading, PC or phone, executor, build, and whether
+  it changed server, was run again or disconnected, with a random id that
+  resets every run and a line number. Sent a few minutes in, every half
+  hour and at the end, and never in a run that had the dashboard on. Turn
+  them off with **Send usage counts** in **Settings → Privacy**.
 - **The dashboard — off by default.** Press **Turn it on** when the setup
   asks, or turn on **Send updates to my dashboard** on the **Dashboard**
   page, and it sends, every half minute and every few seconds while your
   dashboard is open (so the page is live), to your own page at
-  https://tradesmith.pages.dev: what you hold and what it
-  is worth, what it is doing and whether trading is on, what is on the
-  trade table (item names and values only), this session's counts and why
-  offers were turned down, your settings and setup choices (what you
-  keep, what you are getting rid of, your target fruit), your minimum
-  prices, the trades it finished, the top of the price list, the recent
-  activity, your item value over the session, the script's version, and
-  whether game staff are in your server. It never sends who you
-  trade with: names in the activity are replaced before it is sent, and
-  the trade table carries items, not players. If you also turn on **Show
-  my name and avatar**, it sends your numeric Roblox user id so the page
-  can show them; your name itself is never sent or stored. The site keeps
-  only the latest update, plus your total item value once every five
+  https://tradesmith.pages.dev: what you hold and what it is worth, what
+  it is doing and whether trading is on, what is on the trade table (item
+  names and values only), this session's counts and why offers were turned
+  down, your settings and setup choices (what you keep, what you are
+  getting rid of, your target fruit), your minimum prices, the trades it
+  finished in the last 7 days (the items, their values, whether it was an
+  ordinary trade, your target or getting rid of something, and the time
+  for today's trades or only the day for older ones), the trades it would
+  have taken in that time while watching only, your totals for each of
+  those days (trades, profit, and your item value at the day's first
+  reading, with its time for today only), the date on your device so that
+  "today" is your today (this shows roughly which time zone you are in),
+  the top of the price list, the recent activity, your item value over the
+  session, the script's version, whether game staff are in your server,
+  and whether your game has disconnected. The first update after you turn
+  it on also carries the trades it kept on your device from the last 7
+  days, including ones from before you turned it on. When you turn it off,
+  it sends one last message that only says it was turned off. It never
+  sends who you trade with: names in the activity are replaced before it
+  is sent, and the trade table and your trades carry items, not players.
+  If you also turn on **Show my name and avatar**, it sends your numeric
+  Roblox user id so the page can show them; your name itself is never sent
+  or stored. The site keeps only the latest update (which carries those 7
+  days of totals and trades), plus your total item value once every five
   minutes for 7 days so the chart can show a day and a week; older
-  readings are deleted automatically.
+  readings are deleted automatically. If it stops sending, your trades and
+  daily totals are removed from the site after 8 days.
+- **Kept on your device.** So that today's and this week's trades survive
+  a server hop or a re-run, it keeps a small file,
+  `tradesmith-ledger-<your user id>.json`, in your executor's workspace:
+  up to 50 trades, up to 20 it would have taken while watching only, and 8
+  days of totals — items and values, never who was on the other side. It
+  is kept even with the dashboard off, and it only leaves your device as
+  part of a dashboard update. Other scripts you run in the same executor
+  can read this file, as they can your key file. To start the counts
+  again, delete it while the script is not running; that does not change
+  what the site holds.
 
 The dashboard key is its only credential; anyone holding it sees your
-dashboard. It is saved as `tradesmith-key-<your user id>.txt` in your
-executor's workspace. Treat it like a password. The sign-in link carries
-the same key, so keep it to yourself too.
+dashboard, including your last week of trades. It is saved as
+`tradesmith-key-<your user id>.txt` in your executor's workspace. Treat it
+like a password. The sign-in link carries the same key, so keep it to
+yourself too. If the key or the link gets out, press **Make a new key** on
+the **Dashboard** page: it sends the site one message carrying only the old
+key, the site deletes everything it held for that key, and the old link
+shows nothing from then on. If another device uses the same key, paste the
+new key there too.
 
 ## What it loads
 
