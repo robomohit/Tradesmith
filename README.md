@@ -28,6 +28,12 @@ the whole panel:
    and pops up each trade it would have taken, but nothing leaves your
    inventory. Then turn on **Start trading** on Home.
 
+Then one more, and it is optional: **Watch it from your phone?** The live
+dashboard stays off unless you press **Turn it on**. If you do, it copies
+your sign-in link: paste it into your phone's browser (game on a PC? send
+the link to yourself first). **Not now** leaves it off; you can turn it on
+any time on the **Dashboard** page.
+
 Nothing is saved until the last answer. Change any of it later in
 **Settings**, or press **Run the setup again** there. Your answers are
 saved in your executor's workspace and survive a rejoin, so it only asks
@@ -70,7 +76,9 @@ keeps trading while the panel is hidden.
 
 Six pages:
 
-- **Home** — is it on, what is it doing, and will real items leave.
+- **Home** — is it on, what is it doing, and will real items leave. At
+  the bottom, **Join the Discord** copies the invite to the Tradesmith
+  server: help, updates and trade wins.
 - **Activity** — the trades it made, and why it turned offers down.
 - **Items** — what you own, what it can never trade away, and what your
   setup chose.
@@ -96,15 +104,20 @@ Plainly, all of it:
   is kept while the script is new, to see which devices it breaks on. It
   never records your username, your user id or your IP. If that site is
   down it falls back to the copy in this repository and still runs.
+- **The rscripts.net listing.** That listing has rscripts.net's own
+  optional run analytics turned on, so if you run Tradesmith from there,
+  rscripts.net counts your runs on its side, under its own privacy policy.
+  The script sends nothing more because of it.
 - **Crash reports.** If something breaks, it sends one short line: which
   part failed, the error message, your executor's name, the game, your
   screen size and the build. At most five a session. Never your username,
   your user id, your items or your key — your own name is removed from
   the error text before it is sent.
-- **The dashboard — off by default.** Turn on **Send updates to my
-  dashboard** on the **Dashboard** page and it sends, every half minute and
-  every few seconds while your dashboard is open (so the page is live), to
-  your own page at https://tradesmith.pages.dev: what you hold and what it
+- **The dashboard — off by default.** Press **Turn it on** when the setup
+  asks, or turn on **Send updates to my dashboard** on the **Dashboard**
+  page, and it sends, every half minute and every few seconds while your
+  dashboard is open (so the page is live), to your own page at
+  https://tradesmith.pages.dev: what you hold and what it
   is worth, what it is doing and whether trading is on, what is on the
   trade table (item names and values only), this session's counts and why
   offers were turned down, your settings and setup choices (what you
@@ -122,7 +135,8 @@ Plainly, all of it:
 
 The dashboard key is its only credential; anyone holding it sees your
 dashboard. It is saved as `tradesmith-key-<your user id>.txt` in your
-executor's workspace. Treat it like a password.
+executor's workspace. Treat it like a password. The sign-in link carries
+the same key, so keep it to yourself too.
 
 ## What it loads
 
