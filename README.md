@@ -87,10 +87,29 @@ Six pages:
 - **Dashboard** — the optional live page you can open on any device,
   and **Make a new key** if its link gets out.
 - **Settings** — send real trades, minimum gain, minimum demand, items per
-  side, walk speed, server hopping (off by default), running the setup
-  again, and the usage counts switch under **Privacy**.
+  side, walk speed, server hopping (off by default), running alongside a
+  farm script, the extras below, running the setup again, and the usage
+  counts switch under **Privacy**.
 
 Settings are saved as you change them and survive a rejoin.
+
+**Run alongside a farm script** (off by default): it never walks to a
+table, never hops and never stands you up. It trades only while you (or
+your own farm script) sit at a trade table. **F8** turns trading on or off
+from anywhere.
+
+**Extras**, all in Settings. None of them fights, moves you or trades:
+
+- **Fruit dealer alerts** (on): a pop-up with what the fruit dealer sells
+  whenever the stock changes.
+- **Fruit spawn alerts** (on): a pop-up when a fruit appears in your
+  server, with how far away it is.
+- **Auto-store fruits** (off): a fruit you pick up goes straight into
+  your fruit inventory.
+- **Stay in game** (on): stops Roblox kicking you after 20 idle minutes.
+- **Redeem codes**: a button that sends every code you have not used yet.
+  It never runs by itself, because an EXP code starts its timer the moment
+  it is redeemed, and it never sends a stat refund code.
 
 If you multi-launch, add `"owner": "YourRobloxName"` to
 `bf-trader-settings.json` so it only runs on the account you meant.
@@ -162,7 +181,9 @@ Plainly, all of it:
   part of a dashboard update. Other scripts you run in the same executor
   can read this file, as they can your key file. To start the counts
   again, delete it while the script is not running; that does not change
-  what the site holds.
+  what the site holds. Pressing **Redeem codes** also keeps
+  `tradesmith-codes-<your user id>.txt`: the codes it has sent, so each
+  goes once. The codes go to the game, nowhere else.
 
 The dashboard key is its only credential; anyone holding it sees your
 dashboard, including your last week of trades. It is saved as
