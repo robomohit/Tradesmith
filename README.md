@@ -119,7 +119,7 @@ Plainly, all of it:
   trades done (or would have done, in watch mode), value change, mode,
   minutes running and trading, PC or phone, executor, build, and whether
   it changed server, was run again or disconnected, with a random id that
-  resets every run and a line number. Sent a few minutes in, every half
+  resets every run and a line number. Sent about a minute in, every half
   hour and at the end, and never in a run that had the dashboard on. Turn
   them off with **Send usage counts** in **Settings → Privacy**.
 - **The dashboard — off by default.** Press **Turn it on** when the setup
