@@ -106,6 +106,10 @@ from anywhere.
   server, with how far away it is.
 - **Auto-store fruits** (off): a fruit you pick up goes straight into
   your fruit inventory.
+- **Auto spin the fruit gacha** (off): rolls the Blox Fruit Gacha when
+  the game allows it, at most once every 2 hours. It costs Beli, and it
+  only rolls when the game itself says you can (enough Beli, level 50,
+  cooldown over, not region-locked).
 - **Stay in game** (on): stops Roblox kicking you after 20 idle minutes.
 - **Redeem codes**: a button that sends every code you have not used yet.
   It never runs by itself, because an EXP code starts its timer the moment
